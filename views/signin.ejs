@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="jquery.js"></script>
+    <title>Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <style>
+        #sendMessageButton:hover {
+            background-color: #207dae !important;
+        }
+
+        #sendMessageButton:active {
+            background-color: #062e51 !important;
+        }
+
+        #navbar {
+            color: #fff !important;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 0.75rem; */
+            padding: 1em;
+            height: 100px;
+            background-color: #062e51;
+            /* background-color: #207dae; */
+            /* position: fixed; */
+        }
+
+        #navbar a:hover {
+            text-decoration: none;
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbar ul li a {
+            color: #fff !important;
+            padding-top: 0.5em !important;
+            padding: 1rem;
+            font-size: 1.5em;
+            overflow: hidden;
+        }
+
+        #navbar ul li a:hover {
+            /* background: #336ea2; */
+            background: #207dae;
+            overflow: hidden;
+            border-radius: 4px;
+            color: #fff;
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        .bg-dark-blue {
+            background: #062e51;
+            /* background: #207dae; */
+        }
+
+        .heading-small {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <header class="bg-dark-blue">
+            <div class="container">
+                <nav id="navbar">
+                    <a href="/index" id="xper-heading" style="font-size: 2em; font-style: italic; color: #fff;">
+                        xper</a>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h1 class="section-title position-relative text-center mb-5">Login To Your Account</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <div class="contact-form bg-light rounded p-5">
+                        <div id="success"></div>
+                        <form name="login" id="loginForm" novalidate="novalidate" method="post" action="/login">
+                            <div class="form-row">
+                                <div class="col-sm-12 control-group">
+                                    <input type="email" class="form-control p-4" name="email" id="email"
+                                        placeholder="E-mail" required="required"
+                                        data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-12 control-group">
+                                    <input type="password" class="form-control p-4" name="password" id="password"
+                                        placeholder="Password" required="required"
+                                        data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger">
+                                        <%=error%>
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton"
+                                    style="background-color: #062e51;">Sign In</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">Remember Me
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+    <div>
+        <p style="text-align: center;">© 2022 <em>xper</em> | All Rights Reserved.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

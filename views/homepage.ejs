@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="jquery.js"></script>
+    <title>URL Shortner Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f7f7;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        html {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        footer {
+            height: 7rem;
+        }
+
+        #xper-heading:hover {
+            text-decoration: none !important;
+            color: #fff !important;
+        }
+
+        #navbar {
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 0.75rem; */
+            padding: 1em;
+            height: 100px;
+            background-color: #062e51;
+            /* background-color: #207dae; */
+            /* position: fixed; */
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbar ul li a {
+            padding-top: 0.5em !important;
+            padding: 1rem;
+            font-size: 1.5em;
+            overflow: hidden;
+        }
+
+        #navbar ul li a:hover {
+            /* background: #336ea2; */
+            background: #207dae;
+            overflow: hidden;
+            border-radius: 4px;
+            color: #fff;
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        .bg-dark-blue {
+            background: #062e51;
+            /* background: #207dae; */
+        }
+
+        #footer {
+            display: flex;
+            flex-direction: row;
+            color: #000 !important;
+        }
+
+        #footer ul li {
+            list-style-type: none;
+        }
+
+        #footer ul li a {
+            color: #000 !important;
+            text-decoration: none;
+        }
+
+        #sec1-2 {
+            display: flex;
+            flex-direction: column;
+            margin-left: 16em;
+        }
+
+        #sec3-4 {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5em;
+        }
+
+        #sec5-6 {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5em;
+        }
+
+        #sec7 {
+            margin-left: 3em;
+        }
+
+        #sec7 i {
+            font-size: 2em;
+        }
+
+        #sec1 p,
+        #sec2 p,
+        #sec3 p,
+        #sec4 p,
+        #sec5 p,
+        #sec6 p,
+        #sec7 p {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        button[id="submitBtn"]:hover {
+            background-color: #062e51 !important;
+        }
+
+        button[id="submitBtn"]:active {
+            background-color: #062e51 !important;
+        }
+
+        #link-names a {
+            color: #000 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function check() {
+            let lg = document.getElementById('customName').value;
+            let msg = document.getElementById('message');
+            if (lg.length == 10) {
+                msg.style.color = 'red';
+                msg.innerHTML = 'You can give custom names only up to 10 characters';
+            } else msg.innerHTML = '';
+        }
+    </script>
+
+    <div id="navbar">
+        <header class="bg-dark-blue">
+            <div class="container">
+                <nav id="navbar">
+                    <a href="/index" id="xper-heading" style="font-size: 2em; font-style: italic;"> xper</a>
+                    <ul>
+                        <li><a href="#" style="margin-left: 4em;">Why xper?</a></li>
+                        <li><a href="/index" style="margin-left: 1em;"> Services</a></li>
+                        <li><a href="#footer" style="margin-left: 1em;"> Contact</a></li>
+                        <li><a href="/chart" style="margin-left: 1em;"> Stats</a></li>
+                        <li><a href="#footer"
+                                style="margin-left: 1em; background-color: #207dae; border-radius: 4px;">Help</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <br><br>
+    <div class="container col-lg-6">
+        <h1 style="text-align:center;">URL Shortener Service</h1>
+        <div class="row justify-content-center">
+            <form id="form" onkeyup="check()" action="/shortUrls" method="POST" class="my-4 form-inline">
+                <label for="fullUrl" class="sr-only">URL</label>
+                <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl"
+                    class="form-control col-12 mr-2 mb-4">
+                <label for="customName" class="sr-only">Name</label>
+                <input placeholder="Name" type="text" name="customName" id="customName" class="form-control col-12 mr-2"
+                    maxlength="10">
+                <small class="form-text text-muted mb-4">You can give a custom name of up to 10 characters to the
+                    URL you
+                    are shortening.
+                </small>
+                <span id="message" class=""></span>
+
+                <div style="display: flex; flex-direction:column;" class="row justify-content-center">
+                    <div style="display: flex; flex-direction: row;" class="row justify-content-center">
+                        <label for="expireTime" style="margin-left: 2em;">Select the last expiration time of the
+                            shortened
+                            URL:</label> <br>
+                        <div class="row"><input required type="time" name="expireTime" id="expireTime"
+                                style="margin-right: 5em; margin-left: 6.8em; size: 4.5em !important;"
+                                class="col-lg-12"></div>
+                    </div>
+                    <br>
+                    <button class="btn btn-success" type="submit" id="submitBtn" style="margin-left: 6em; align-self: center; background-color:#207dae !important; padding: 0.8em;
+                        padding-left: 5em; padding-right: 5em; font-size: 1em;">
+                        Shorten
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br>
+
+    <!--<div class="col-lg-12">-->
+    <div class="table-responsive">
+        <table class="table table-striped" id="link-names">
+            <thead>
+                <tr>
+                    <th>Shortened URL Name</th>
+                    <th>Full URL</th>
+                    <th>Short URL</th>
+                    <th>Clicks</th>
+                    <th>Created Date</th>
+                    <th>Expire Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% shortUrls.forEach(shortUrl=> { %>
+                    <tr>
+                        <td>
+                            <%= shortUrl.name%>
+                        </td>
+                        <td><a target="_blank" href="<%= shortUrl.full %>">
+                                <%=shortUrl.full%>
+                            </a></td>
+                        <td><a target="_blank" href="<%= shortUrl.short %>">
+                                <%= shortUrl.short %>
+                            </a></td>
+                        <td>
+                            <%= shortUrl.clicks %>
+                        </td>
+                        <td>
+                            <%=shortUrl.createdDate.toLocaleString() %>
+                        </td>
+                        <td>
+                            <%=shortUrl.expireTime.toLocaleString() %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br><br><br><br>
+    <hr><br>
+    <div id="footer">
+        <div id="sec1-2">
+            <section id="sec1">
+                <p>Why <em>xper</em>?</p>
+                <ul>
+                    <li><a href="#"><em>xper </em> 101</a></li>
+                    <li><a href="#">API Service</a></li>
+                    <li><a href="#">Enterprises</a></li>
+                    <li><a href="#">Pricings</a></li>
+                </ul>
+            </section>
+            <section id="sec2">
+                <p>Products &amp; Services</p>
+                <ul>
+                    <li><a href="#">Link-In-Bio System</a></li>
+                    <li><a href="#">Link Management</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="sec3-4">
+            <section id="sec3">
+                <p>Solutions</p>
+                <ul>
+                    <li><a href="#">Social Media</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                </ul>
+            </section>
+            <section id="sec4">
+                <p>Features</p>
+                <ul>
+                    <li><a href="#">Branded Links</a></li>
+                    <li><a href="#">Non-branded Links</a></li>
+                    <li><a href="#">Analytics</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="sec5-6">
+            <section id="sec5">
+                <p>Legal</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms Of Service</a></li>
+                </ul>
+            </section>
+            <section id="sec6">
+                <p>Company</p>
+                <ul>
+                    <li><a href="#">About <em>xper</em></a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Reviews</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="sec7">
+            <section id="sec7">
+                <p><em>xper</em></p>
+                © 2022 <em>xper</em> | Handmade in Kocaeli, Turkey. <br> <br>
+                <a href="#"><i class="fa-brands fa-facebook" style="color: rgba(0,0,128,1);"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter" style="color: #1d9bf0;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram" style="color:#f70261;"></i></a>
+                <a href="#"><i class="fa-brands fa-github" style="color: #000;"></i></a>
+            </section>
+        </div>
+        <br><br><br>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> xper: Landing Page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f7f7;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        html {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        footer {
+            height: 7rem;
+        }
+
+        #xper-heading:hover {
+            text-decoration: none !important;
+            color: #fff !important;
+        }
+
+        #navbar {
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 0.75rem; */
+            padding: 1em;
+            height: 100px;
+            background-color: #062e51;
+            /* background-color: #207dae; */
+            /* position: fixed; */
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbar ul li a {
+            padding-top: 0.5em !important;
+            padding: 1rem;
+            font-size: 1.5em;
+            overflow: hidden;
+        }
+
+        #navbar ul li a:hover {
+            /* background: #336ea2; */
+            background: #207dae;
+            overflow: hidden;
+            border-radius: 4px;
+            color: #fff;
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        .bg-dark-blue {
+            background: #062e51;
+            /* background: #207dae; */
+        }
+
+        .heading-small {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        #div1 {
+            margin-top: 7em;
+            margin-left: 8em;
+            margin-right: 10em;
+            align-self: center;
+            border-radius: 5px;
+            text-align: start;
+            display: flex;
+            flex-direction: row;
+            background-color: #f7f7f7;
+        }
+
+        #div1 p {
+            color: #000;
+            font-weight: bolder;
+            font-size: 3em;
+            opacity: 1 !important;
+            font-style: italic;
+            text-shadow: 2px 2px 7px rgba(255, 255, 255, .5);
+        }
+
+        #div1 img {
+            margin-left: 15em;
+        }
+
+        #div1 input,
+        #shortener input {
+            padding: 1em 1em;
+            background-color: #062e51;
+            color: #fff;
+            border: 1px solid #062e51;
+            border-radius: 5px;
+            font-size: 1.5em;
+        }
+
+        #div1 input:active,
+        #div1 input :visited {
+            background-color: #062e51;
+        }
+
+        #div1 a {
+            font-style: bold;
+        }
+
+        #div1 a:hover {
+            text-decoration: none;
+        }
+
+        #div1 input:hover {
+            background-color: #207dae;
+        }
+
+        #div1 input:active {
+            background-color: #062e51;
+        }
+
+        #div2 p:first-child {
+            text-align: center;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        #shortener {
+            border: 2px solid black;
+            border-radius: 5px;
+            margin-left: 24em;
+            margin-right: 24em;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        #shortener ul li {
+            list-style-type: none;
+            margin-left: 9em;
+            font-size: 1.3em;
+        }
+
+        #shortener input {
+            margin-left: 17em;
+            /* align-items: center !important; */
+            font-size: 1em !important;
+        }
+
+        #shortener input:hover {
+            background-color: #207dae;
+        }
+
+        #shortener input:active {
+            background-color: #062e51;
+        }
+
+        #shortener p {
+            font-weight: bold;
+            font-size: 1.7em !important;
+        }
+
+        #div3 {
+            background-color: #062e51;
+            color: #fff;
+            padding: 2em;
+        }
+
+        #div3 p:first-child {
+            text-align: center;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        #div4 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #div4 table {
+            margin-left: 5em;
+        }
+
+        #div4 table td {
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        #div5 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #brands {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #div6 {
+            padding: 2em;
+            background-color: #062e51;
+            color: #fff;
+        }
+
+        #div6 input {
+            padding: 1em 1em;
+            background-color: #207dae;
+            color: #fff;
+            border: 1px solid #062e51;
+            border-radius: 5px;
+            font-size: 1.5em;
+        }
+
+        #div6 input:hover {
+            background-color: #0a699c;
+            text-decoration: none;
+        }
+
+        #div6 input:active {
+            background-color: #207dae;
+        }
+
+        #footer {
+            display: flex;
+            flex-direction: row;
+            color: #000 !important;
+        }
+
+        #footer ul li {
+            list-style-type: none;
+        }
+
+        #footer ul li a {
+            color: #000 !important;
+            text-decoration: none;
+        }
+
+        #sec1-2 {
+            display: flex;
+            flex-direction: column;
+            margin-left: 16em;
+        }
+
+        #sec3-4 {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5em;
+        }
+
+        #sec5-6 {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5em;
+        }
+
+        #sec7 {
+            margin-left: 3em;
+        }
+
+        #sec7 i {
+            font-size: 2em;
+        }
+
+        #sec1 p,
+        #sec2 p,
+        #sec3 p,
+        #sec4 p,
+        #sec5 p,
+        #sec6 p,
+        #sec7 p {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <header class="bg-dark-blue">
+            <div class="container">
+                <nav id="navbar">
+                    <a href="/index" id="xper-heading" style="font-size: 2em; font-style: italic;"> xper</a>
+                    <ul>
+                        <li><a href="#div2" style="margin-left: 4em;">Why xper?</a></li>
+                        <li><a href="#div3" style="margin-left: 1em;"> Services</a></li>
+                        <li><a href="#footer" style="margin-left: 1em;"> Contact</a></li>
+                        <li><a href="/signin" style="margin-left: 1em;"> Log In</a></li>
+                        <li><a href="/signup" style="margin-left: 1em;"> Sign Up</a></li>
+                        <li><a href="/idx" style="margin-left: 1em;"> Admin</a></li>
+                        <li><a href="#footer" style="margin-left: 1em; background-color: #207dae; border-radius: 4px;">
+                                Help</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <div id="div1">
+        <div style="display: flex; flex-direction: column;">
+            <p style="display: flex; flex-direction: column;">
+                xper: <br>
+                the easiest way to <br> shorten your links.
+            </p> <br><br>
+            <a href="/homepage"><input type="button" value="URL Shortener"></a>
+
+        </div>
+        <img src="img/div1_img.png" width="600px" height="400px" alt="">
+    </div>
+
+    <br><br><br><br><br>
+    <hr><br><br><br>
+
+    <div id="div2">
+        <p> <em>xper</em>'s Connection Platforms</p>
+        <p style="text-align: center; font-size: 1.5em;">
+            We proudly present our platform to make you sure shortening links with safety.
+        </p> <br>
+        <div id="shortener">
+            <p>Features of our shortener site:</p>
+            <ul style="margin-left:40px;">
+                <li>URL shortening at scale</li>
+                <li>Custom links with your brand</li>
+                <li>URL redirects</li>
+                <li>Advanced analytics & tracking</li>
+            </ul>
+            <a href="/homepage"><input type="button" value="Go to URL Shortener"></a>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <div id="div3">
+        <p>How To Use <em>xper</em> URL Shortener Service?</p>
+        <p style="font-size: 1.3em; text-align: center;">Let's go step by step.</p>
+        <div class="one" style="display: flex; flex-direction: row;">
+            <p>
+            <p style="font-size: 1.4em; padding-right: 1em;">1. </p> Go to the page "url shortener" from .
+            <a style="color:burlywood;" href="/urlShortener"> here</a>,
+            then write or paste the url link you want to shorten into "Url" input block. If you want to give a name to
+            the link,
+            it will be named as you want.
+            </p>
+        </div>
+        <div class="two" style="display: flex; flex-direction: row;">
+            <p>
+            <p style="font-size: 1.4em; padding-right: 1em;">2. </p> Set a time for the link and click the "Shorten"
+            block.
+            It will shorten your link for a while that you choose. After that time, the link will be expired.
+            </p>
+        </div>
+        <div class="three" style="display: flex; flex-direction: row;">
+            <p>
+            <p style="font-size: 1.4em; padding-right: 1em;">3. </p> The link is shortened! You can use it on your
+            social media
+            accounts, share with friends and do whatever you want! Hope you enjoy.
+            </p>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+
+    <div id="div4">
+        <img style="margin-left: 3em;" src="img/globe.png" alt="">
+        <table style="border-collapse: collapse; width: 100%;">
+            <tbody>
+                <tr style="height: 24px;">
+                    <td style="width: 50%; height: 24px;">
+                        <h3>300K</h3>
+                    </td>
+                    <td style="width: 50%; height: 24px;;">Global Customers</td>
+                </tr>
+                <tr style="height: 24px;">
+                    <td style="width: 50%; height: 24px;">
+                        <h3>9.8M</h3>
+                    </td>
+                    <td style="width: 50%; height: 24px;">Yearly Users</td>
+                </tr>
+                <tr style="height: 24px;">
+                    <td style="width: 50%; height: 24px;">
+                        <h3>947M</h3>
+                    </td>
+                    <td style="width: 50%; height: 24px;">Links Created Yearly</td>
+                </tr>
+                <tr style="height: 24px;">
+                    <td style="width: 50%; height: 24px;">
+                        <h3>40B</h3>
+                    </td>
+                    <td style="width: 50%; height: 24px;">Clicks Daily</td>
+                </tr>
+                <tr style="height: 24px;">
+                    <td style="width: 50%; height: 24px;">
+                        <h3>500+</h3>
+                    </td>
+                    <td style="width: 50%; height: 24px;">Application Inspirations</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br><br><br><br>
+    <hr><br><br><br>
+
+
+    <div id="div5">
+        <p style="text-align: center; font-weight: bold; font-size: 3em;">Our collaborated brands:</p>
+        <div id="brands">
+            <img src="img/big-fish.svg" alt="" style="margin-left: 23em;">
+            <img src="img/electronic-arts.svg" alt="">
+            <img src="img/marriott.svg" alt="">
+            <img src="img/new-york-times.svg" alt="">
+            <img src="img/novasol.svg" alt="">
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <div id="div6">
+        <p style="text-align: center; font-weight: bold; font-size: 3em;">More than a url shortener. Try it now.</p>
+        <a href="/homepage"><input type="button" value="Get Started" style="margin-left: 28em;"></a>
+
+    </div>
+
+    <br><br><br>
+
+    <div id="footer">
+        <div id="sec1-2">
+            <section id="sec1">
+                <p>Why <em>xper</em>?</p>
+                <ul>
+                    <li><a href="#"><em>xper </em> 101</a></li>
+                    <li><a href="#">API Service</a></li>
+                    <li><a href="#">Enterprises</a></li>
+                    <li><a href="#">Pricings</a></li>
+                </ul>
+            </section>
+            <section id="sec2">
+                <p>Products &amp; Services</p>
+                <ul>
+                    <li><a href="#">Link-In-Bio System</a></li>
+                    <li><a href="#">Link Management</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="sec3-4">
+            <section id="sec3">
+                <p>Solutions</p>
+                <ul>
+                    <li><a href="#">Social Media</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                </ul>
+            </section>
+            <section id="sec4">
+                <p>Features</p>
+                <ul>
+                    <li><a href="#">Branded Links</a></li>
+                    <li><a href="#">Non-branded Links</a></li>
+                    <li><a href="#">Analytics</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="sec5-6">
+            <section id="sec5">
+                <p>Legal</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms Of Service</a></li>
+                </ul>
+            </section>
+            <section id="sec6">
+                <p>Company</p>
+                <ul>
+                    <li><a href="#">About <em>xper</em></a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Reviews</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="sec7">
+            <section id="sec7">
+                <p><em>xper</em></p>
+                © 2022 <em>xper</em> | Handmade in Kocaeli, Turkey. <br> <br>
+                <a href="#"><i class="fa-brands fa-facebook" style="color: rgba(0,0,128,1);"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter" style="color: #1d9bf0;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram" style="color:#f70261;"></i></a>
+                <a href="#"><i class="fa-brands fa-github" style="color: #000;"></i></a>
+            </section>
+        </div>
+        <br><br><br>
+    </div>
+</body>
+
+</html>
