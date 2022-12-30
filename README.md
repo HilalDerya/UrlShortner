@@ -16,4 +16,5 @@ URL kısaltma servisi sayfası:
 ![2022-12-27](https://user-images.githubusercontent.com/69717650/209641500-3e5412a4-0c37-4b39-b7d3-532edefdb8b7.png)
 
 Admin panelinde sergilenen istatistik sayfası:
-![2022-12-26 (11)](https://user-images.githubusercontent.com/69717650/209641619-4d1b4d12-6880-4a1d-88e0-77b1d2e573b6.png)
+![2022-12-29](https://user-images.githubusercontent.com/69717650/210065935-635b6afb-c366-4a8a-9c5a-8f3fda366c1a.png)
+
