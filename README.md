@@ -1,20 +1,18 @@
 # UrlShortner
 
-Bilişim Sistemleri Mühendisliği, Yazılım Geliştirme Labaratuvarı dersi için geliştirdiğimiz proje.
+In the project users can shorten any URL they want, they can give the shortened URL a custom name of up to 10 characters and set the expiration time of the shortened URL.
 
-Projede kullanıcılar; istedikleri URL'yi kısaltabilir, kısalttıkları URL'ye 10 karaktere kadar özel ad verebilir ve kısaltılmış URL'nin geçerliliğini yitirme süresini belirleyebilirler.
-
-# Kullandığımız Teknolojiler
+# Used Technologies
 
 - Nodejs
 - Express
 - MongoDB
 - Chart.js
 
-## Projenin Görünümü
-URL kısaltma servisi sayfası:
+## The Project
+URL shortening service page:
 ![2022-12-27](https://user-images.githubusercontent.com/69717650/209641500-3e5412a4-0c37-4b39-b7d3-532edefdb8b7.png)
 
-Admin panelinde sergilenen istatistik sayfası:
+Statistics page displayed in the admin panel:
 ![2022-12-29](https://user-images.githubusercontent.com/69717650/210065935-635b6afb-c366-4a8a-9c5a-8f3fda366c1a.png)
 
